@@ -1,4 +1,6 @@
-1-Template
+1-Templates
 db_tiendavirtual.sql
 docker-compose.yml
 Dockerfile
+.dockerignore
+.gitignore

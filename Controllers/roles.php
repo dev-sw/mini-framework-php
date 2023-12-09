@@ -24,7 +24,6 @@
 		}
 
 		public function getRoles(){
-			
 			$arrData = $this->model->selectRoles();
 
 			for($i=0; $i<count($arrData); $i++){ 
@@ -83,7 +82,6 @@
 		}
 
 		public function setRol(){
-			
 			$intIdrol = intval($_POST["idRol"]);
 			$strRol = strClean($_POST["txtNombre"]);
 			$strDescripcion = strClean($_POST["txtDescripcion"]);
@@ -117,7 +115,6 @@
 		}
 
 		public function delRol(){
-
 			if ($_POST){
 				$intIdrol = intval($_POST['idrol']);
 				$requestDelete = $this->model->deleteRol($intIdrol);

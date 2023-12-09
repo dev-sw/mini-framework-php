@@ -7,11 +7,11 @@
 
 	//const LIBS = "Libraries/";
 	//const VIEWS = "Views/";
-	const DB_HOST = "mysql"; //"localhost"; //"127.0.0.1";
+	const DB_HOST = "localhost"; //"mysql"; //"127.0.0.1";
 	const DB_NAME = "db_tiendavirtual";
 	const DB_USER = "root";
 	const DB_PASSWORD = "074-lambayeque";
-	const DB_CHARSET = "charset-utf8";
+	const DB_CHARSET = "utf8";
 
 	//Delimitadores decimal y millar Ej.24,1989.00
 	const SPD = ".";

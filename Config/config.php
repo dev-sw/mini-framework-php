@@ -1,14 +1,15 @@
 <?php 
-	//define("BASE_URL","http://localhost/Sistema_Logistico/");
-	const BASE_URL = "http://localhost/tienda_virtual";
+	//define("BASE_URL","http://localhost/tienda_virtual");
+	const BASE_URL = "http://localhost:82";
 
 	//Zona Horaria
 	date_default_timezone_set('America/Bogota');
 
 	//const LIBS = "Libraries/";
 	//const VIEWS = "Views/";
-	const DB_HOST = "localhost"; //"mysql"; //"127.0.0.1";
+	const DB_HOST = "mysql"; //"localhost"; //"127.0.0.1";
 	const DB_NAME = "db_tiendavirtual";
+	//const DB_PORT = "3306";
 	const DB_USER = "root";
 	const DB_PASSWORD = "074-lambayeque";
 	const DB_CHARSET = "utf8";

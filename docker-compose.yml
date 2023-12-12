@@ -1,0 +1,62 @@
+version: "3.9"
+
+volumes: # Definimos los volúmenes
+  mysql-data:
+    name: docker-data-tienda
+
+networks:
+  network-id:
+    name: docker-network-tienda
+
+services:
+  php:
+    build:
+      context: . # Especificar ruta donde se encuentra mi archivo de imágen
+      dockerfile: Dockerfile # Si hubiese ambiente de desarrollo se indica el archivo: Dockerfile.dev
+    image: entorno-php-tienda
+    container_name: docker-php-tienda
+    ports:
+      - 82:80
+    volumes:
+      - ./:/var/www/html # [Ruta Origen]:[Ruta Destino]
+    links: # Acceso del Servicio Web al Servicio MySQL
+      - mysql
+    restart: always
+    networks: # Id de mi Red
+      - network-id
+
+  mysql:
+    # build:
+      # context: .
+    image: mysql
+    container_name: docker-mysql-tienda
+    # command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: db_tiendavirtual
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: 074-lambayeque
+      # MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: 074-lambayeque
+    ports:
+      - 3308:3306
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - mysql-data:/var/lib/mysql
+    restart: always
+    networks:
+      - network-id
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: docker-phpmyadmin-tienda
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      # PMA_ARBITRARY: 1 # Al colocar en 1 indicamos que al loguearnos en PHPMyAdmin requerira colocar el nombre del host: mysql
+    restart: always
+    ports:
+      - 8082:80
+    networks:
+      - network-id

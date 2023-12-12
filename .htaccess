@@ -1,10 +1,10 @@
-#Evita el ingreso a las carpetas desde el navegador
-Options All Indexes
+# Evita el ingreso a las carpetas desde el navegador
+  Options All Indexes
 
-RewriteEngine On
-#Busca un directorio válido
-RewriteCond %{REQUEST_FILENAME} !-d
-#Una condición debe ser verdadera para que se procese los proximos request_filename 
-RewriteCond %{REQUEST_FILENAME} !-f
-#Reescribir los modulos que vamos a pasar por la URL
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+  RewriteEngine On
+# Busca un directorio válido
+  RewriteCond %{REQUEST_FILENAME} !-d
+# Una condición debe ser verdadera para que se procese los proximos request_filename 
+  RewriteCond %{REQUEST_FILENAME} !-f
+# Reescribir los modulos que vamos a pasar por la URL 
+  RewriteRule ^(.*)$ ./index.php?url=$1 [QSA,L]

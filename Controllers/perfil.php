@@ -1,5 +1,6 @@
 <?php 
 	class perfil extends Controllers{
+		private $views;
 		
 		public function __construct(){
 

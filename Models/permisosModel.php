@@ -1,6 +1,6 @@
 <?php 
 	class permisosModel extends mysql{
-
+		public $intIdRol;
 		public $intIdPermiso;
 		public $intRolId;
 		public $intModuloId;
@@ -12,6 +12,14 @@
 		public function __construct(){
 			//echo "Mensaje desde el modelo home";
 			parent:: __construct();
+		}
+
+		public function selectRol(int $idrol){
+			$this->intIdRol = $idrol;
+
+			$sql = "SELECT * FROM rol WHERE id_rol = $this->intIdRol";
+			$request = $this->select($sql);
+			return $request;
 		}
 
 		public function selectModulos(){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2023 a las 13:56:46
+-- Tiempo de generación: 12-12-2023 a las 18:59:31
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -73,14 +73,14 @@ CREATE TABLE `modulo` (
   `id_modulo` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 1
+  `estado` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `modulo`
 --
 
-INSERT INTO `modulo` (`id_modulo`, `nombre`, `descripcion`, `status`) VALUES
+INSERT INTO `modulo` (`id_modulo`, `nombre`, `descripcion`, `estado`) VALUES
 (1, 'Dashboard', 'Cuadros Estadísticos', 1),
 (2, 'Administración', 'Usuarios y Roles del sistema.', 1);
 
@@ -120,8 +120,8 @@ CREATE TABLE `permisos` (
 --
 
 INSERT INTO `permisos` (`id_permiso`, `rol_id`, `modulo_id`, `r`, `w`, `u`, `d`) VALUES
-(1, 1, 1, 1, 1, 1, 1),
-(2, 1, 2, 1, 1, 1, 1);
+(3, 1, 1, 1, 0, 0, 0),
+(4, 1, 2, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -298,7 +298,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`

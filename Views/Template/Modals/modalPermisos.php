@@ -1,10 +1,9 @@
 <!-- Modal Permisos (Extra large modal) -->
 <div class="modal fade modalPermisos" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title h4">Permisos Roles de Usuario</h5>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">      
+      <div class="modal-header headerRegister">
+        <h5 class="modal-title h4">Permisos Rol de Usuario: <?= $data['rol'] ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">x</span>
         </button>

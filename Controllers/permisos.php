@@ -9,11 +9,12 @@
 			$intRolId = intval($idrol);
 
 			if ($intRolId > 0){
+				$arrRol = $this->model->selectRol($intRolId);
 				$arrModulos = $this->model->selectModulos();
 				$arrPermisosRol = $this->model->selectPermisosRol($intRolId);
 
 				$arrPermisos = array('r' => 0, 'w' => 0, 'u' => 0, 'd' => 0);
-				$arrPermisoRol = array('id_rol' => $intRolId);
+				$arrPermisoRol = array('id_rol' => $intRolId, 'rol' => $arrRol['nombre']);
 
 				if (empty($arrPermisosRol)){
 					for ($i=0; $i < count($arrModulos); $i++){ 
